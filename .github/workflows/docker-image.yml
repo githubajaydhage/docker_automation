@@ -17,7 +17,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t image2 .
+        docker build -t autopush .
         
     - name: Login to Docker Hub
       if: success()
@@ -26,5 +26,5 @@ jobs:
     - name: Push Docker Image to Docker Hub
       if: success()
       run: |
-        docker tag image2 ajaydhage/autopush:Newimage
-        docker push ajaydhage/autopush:Newimage
+        docker tag autopush ajaydhage/autopush:testing
+        docker push ajaydhage/autopush:testing
